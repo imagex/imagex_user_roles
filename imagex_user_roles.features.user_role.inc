@@ -10,12 +10,6 @@
 function imagex_user_roles_user_default_roles() {
   $roles = array();
 
-  // Exported role: Administrator.
-  $roles['Administrator'] = array(
-    'name' => 'Administrator',
-    'weight' => 2,
-  );
-
   // Exported role: Content Administrator.
   $roles['Content Administrator'] = array(
     'name' => 'Content Administrator',

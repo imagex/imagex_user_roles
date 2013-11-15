@@ -5,7 +5,6 @@ version = 7.x-1.0
 project = imagex_user_roles
 dependencies[] = features
 features[features_api][] = api:1
-features[user_role][] = Administrator
 features[user_role][] = Content Administrator
 features[user_role][] = Content Creator
 features[user_role][] = Content Manager

@@ -1,0 +1,26 @@
+<?php
+/**
+ * @file
+ */
+
+/**
+ * Implements hook_install().
+ */
+function imagex_user_roles_dummy_users_install() {
+  module_load_include('inc', 'imagex_user_roles_dummy_users', 'imagex_user_roles_dummy_users.users');
+  foreach (imagex_user_roles_dummy_users_users() as $user) {
+    user_save($user);
+  }
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function imagex_user_roles_dummy_users_uninstall() {
+  module_load_include('inc', 'imagex_user_roles_dummy_users', 'imagex_user_roles_dummy_users.users');
+  foreach (imagex_user_roles_dummy_users_users() as $user) {
+    if (FALSE !== ($user = user_load_by_name($user->name))) {
+      user_delete($user->uid);
+    }
+  }
+}

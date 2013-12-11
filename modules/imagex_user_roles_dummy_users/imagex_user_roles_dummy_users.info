@@ -1,0 +1,6 @@
+name = User Roles - Dummy Users
+core = 7.x
+package = ImageX
+version = 7.x-1.0
+project = imagex_user_roles_dummy_users
+dependencies[] = imagex_user_roles

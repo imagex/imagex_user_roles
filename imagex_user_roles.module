@@ -3,3 +3,18 @@
  * @file
  * Drupal needs this blank file.
  */
+
+function imagex_user_roles_by_role_info() {
+  $roles_info = drupal_static(__FUNCTION__, array());
+  if (empty($roles_info)) {
+    module_load_include('inc', 'imagex_user_roles', 'imagex_user_roles.features.user_role');
+    $role_names = array_keys(imagex_user_roles_user_default_roles());
+
+    foreach ($role_names as $role_name) {
+      if (FALSE !== $role = user_role_load_by_name($role_name)) {
+        $roles_info[$role_name] = $role;
+      }
+    }
+  }
+  return $roles_info;
+}
